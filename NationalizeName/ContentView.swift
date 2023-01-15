@@ -25,13 +25,16 @@ struct ContentView: View {
             }
             Rectangle()
                 .frame(width: 30, height: 20).foregroundColor(Color.clear)
-            if name != nil {
-                Text("Result")
+            if name != nil && searchText != "" {
+                Text("Result for the name: \(searchText)")
+                    .font(.title)
+                    .padding(5)
                 ForEach(name!.country, id: \.country_id) { country in
-                    HStack {
-                        Text("Country: \(country.country_id)")
+                    VStack {
+                        Text("Country: \(countriesDictionary[country.country_id] ?? "")")
                         Text("Probability: \(String(format: "%.2f", country.probability * 100))%")
                     }
+                    .padding(5)
                 }
             }
 
