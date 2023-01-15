@@ -13,7 +13,8 @@ struct ContentView: View {
     let api = NameAPI()
     var body: some View {
         VStack {
-            
+            Text("Nationalize Name")
+                .font(.largeTitle)
             SearchBar(text: $searchText, placeholder: "Enter a name")
             Button(action: {
                 if searchText != "" {
