@@ -13,7 +13,8 @@ struct ContentView: View {
     let api = NameAPI()
     var body: some View {
         VStack {
-            SearchBar(text: $searchText, placeholder: "Search")
+            
+            SearchBar(text: $searchText, placeholder: "Enter a name")
             Button(action: {
                 if searchText != "" {
                     self.fetchName()
@@ -21,10 +22,18 @@ struct ContentView: View {
             }) {
                 Text("Search")
             }
+            Rectangle()
+                .frame(width: 30, height: 20).foregroundColor(Color.clear)
             if name != nil {
-                Text("Country: \(name!.country[0].country_id)")
-                Text("Probability: \(name!.country[0].probability * 100)%")
+                Text("Result")
+                ForEach(name!.country, id: \.country_id) { country in
+                    HStack {
+                        Text("Country: \(country.country_id)")
+                        Text("Probability: \(String(format: "%.2f", country.probability * 100))%")
+                    }
+                }
             }
+
             Spacer()
         }
         .padding()
