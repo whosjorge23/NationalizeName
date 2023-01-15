@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC5971CF29740EFE00F92E65 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = CC5971CE29740EFE00F92E65 /* CountryPicker */; };
 		CCC1E5AE2973130000767BE9 /* NationalizeNameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1E5AD2973130000767BE9 /* NationalizeNameApp.swift */; };
 		CCC1E5B02973130000767BE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1E5AF2973130000767BE9 /* ContentView.swift */; };
 		CCC1E5B22973130000767BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC1E5B12973130000767BE9 /* Assets.xcassets */; };
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5971CF29740EFE00F92E65 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +112,6 @@
 			);
 			name = NationalizeName;
 			packageProductDependencies = (
-				CC5971CE29740EFE00F92E65 /* CountryPicker */,
 			);
 			productName = NationalizeName;
 			productReference = CCC1E5AA2973130000767BE9 /* NationalizeName.app */;
@@ -145,7 +142,6 @@
 			);
 			mainGroup = CCC1E5A12973130000767BE9;
 			packageReferences = (
-				CC5971CD29740EFE00F92E65 /* XCRemoteSwiftPackageReference "countrypicker" */,
 			);
 			productRefGroup = CCC1E5AB2973130000767BE9 /* Products */;
 			projectDirPath = "";
@@ -379,25 +375,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CC5971CD29740EFE00F92E65 /* XCRemoteSwiftPackageReference "countrypicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/suryakantsharma/countrypicker.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CC5971CE29740EFE00F92E65 /* CountryPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC5971CD29740EFE00F92E65 /* XCRemoteSwiftPackageReference "countrypicker" */;
-			productName = CountryPicker;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCC1E5A22973130000767BE9 /* Project object */;
 }
