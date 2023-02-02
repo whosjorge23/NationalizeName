@@ -31,7 +31,7 @@ struct ContentView: View {
                     .padding(5)
                 ForEach(name!.country, id: \.country_id) { country in
                     VStack {
-                        Text("Country: \(countriesDictionary[country.country_id] ?? "")")
+                        Text("Country: \(countriesDictionary[country.country_id]  ?? "") \(countriesFlags[country.country_id]  ?? "")")
                         Text("Probability: \(String(format: "%.2f", country.probability * 100))%")
                     }
                     .padding(5)
