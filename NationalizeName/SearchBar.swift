@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     var placeholder: String
+    @Binding var searchActive: Bool
 
     var body: some View {
         HStack {
@@ -18,8 +19,9 @@ struct SearchBar: View {
                 .frame(height: 11.0)
             Button(action: {
                 self.text = ""
+                self.searchActive = true
             }) {
-                Image(systemName: "xmark.circle.fill").opacity(text == "" ? 0 : 1)
+                Image(systemName: "xmark.circle.fill").opacity(text == "" ? 0 : 1).foregroundColor(Color.purple)
             }
         }
         .padding()

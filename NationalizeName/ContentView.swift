@@ -10,22 +10,29 @@ import SwiftUI
 struct ContentView: View {
     @State var searchText = ""
     @State var name: Name? = nil
+    @State private var searchActive: Bool = false
     let api = NameAPI()
     var body: some View {
         VStack {
             Text("Nationalize Name")
                 .font(.largeTitle)
-            SearchBar(text: $searchText, placeholder: "Enter a name")
+            SearchBar(text: $searchText, placeholder: "Enter a name", searchActive: $searchActive)
+                .padding()
             Button(action: {
                 if searchText != "" {
                     self.fetchName()
+                    self.searchActive = false
                 }
             }) {
                 Text("Search")
+                    .padding(15)
+                    .background(Color.purple)
+                    .cornerRadius(10)
+                    .foregroundColor(.white)
             }
             Rectangle()
                 .frame(width: 30, height: 20).foregroundColor(Color.clear)
-            if name != nil && searchText != "" {
+            if name != nil && searchText != "" && !searchActive {
                 Text("Result for the name: \(searchText)")
                     .font(.title)
                     .padding(5)
